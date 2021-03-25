@@ -1,0 +1,12 @@
+C:\Users\mebromwell\Documents\Programming\Fun Stuff\PokemonApp\PokemonApp\bin\Debug\PokemonApp.exe.config
+C:\Users\mebromwell\Documents\Programming\Fun Stuff\PokemonApp\PokemonApp\bin\Debug\PokemonApp.exe
+C:\Users\mebromwell\Documents\Programming\Fun Stuff\PokemonApp\PokemonApp\bin\Debug\PokemonApp.pdb
+C:\Users\mebromwell\Documents\Programming\Fun Stuff\PokemonApp\PokemonApp\bin\Debug\PokemonApp.xml
+C:\Users\mebromwell\Documents\Programming\Fun Stuff\PokemonApp\PokemonApp\obj\Debug\PokemonApp.vbprojAssemblyReference.cache
+C:\Users\mebromwell\Documents\Programming\Fun Stuff\PokemonApp\PokemonApp\obj\Debug\PokemonApp.PokeApp.resources
+C:\Users\mebromwell\Documents\Programming\Fun Stuff\PokemonApp\PokemonApp\obj\Debug\PokemonApp.Resources.resources
+C:\Users\mebromwell\Documents\Programming\Fun Stuff\PokemonApp\PokemonApp\obj\Debug\PokemonApp.vbproj.GenerateResource.cache
+C:\Users\mebromwell\Documents\Programming\Fun Stuff\PokemonApp\PokemonApp\obj\Debug\PokemonApp.vbproj.CoreCompileInputs.cache
+C:\Users\mebromwell\Documents\Programming\Fun Stuff\PokemonApp\PokemonApp\obj\Debug\PokemonApp.exe
+C:\Users\mebromwell\Documents\Programming\Fun Stuff\PokemonApp\PokemonApp\obj\Debug\PokemonApp.xml
+C:\Users\mebromwell\Documents\Programming\Fun Stuff\PokemonApp\PokemonApp\obj\Debug\PokemonApp.pdb
