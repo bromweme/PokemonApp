@@ -150,10 +150,10 @@ Partial Class PokeApp
         '
         'webImage
         '
-        Me.webImage.Location = New System.Drawing.Point(492, 29)
+        Me.webImage.Location = New System.Drawing.Point(464, 12)
         Me.webImage.MinimumSize = New System.Drawing.Size(20, 20)
         Me.webImage.Name = "webImage"
-        Me.webImage.Size = New System.Drawing.Size(250, 250)
+        Me.webImage.Size = New System.Drawing.Size(313, 426)
         Me.webImage.TabIndex = 16
         '
         'PokeApp

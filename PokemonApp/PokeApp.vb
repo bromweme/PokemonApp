@@ -319,26 +319,13 @@ Public Class PokeApp
             cboCards.DisplayMember = "name"
             cboCards.DataSource = dt
 
+            'MessageBox.Show(dt.Rows(0).Item(2).ToString)
+            webImage.Navigate(dt.Rows(0).Item(2).ToString)
+
             ' Select the first item in the list by default
             If cboCards.Items.Count > 0 Then cboCards.SelectedIndex = 0
 
             drSourceTable.Close()
-
-            strSelect = "SELECT image FROM cards Where id = " & cboCards.SelectedValue.ToString
-
-            'Retrieve all the records 
-            cmdSelect = New OleDb.OleDbCommand(strSelect, m_conAdministrator)
-            drSourceTable = cmdSelect.ExecuteReader
-
-            'load the data table from the reader
-            dt.Load(drSourceTable)
-
-            'populate the text boxes with the data
-            webImage.Navigate(dt.Rows(0).Item(4).ToString)
-
-
-            drSourceTable.Close()
-
 
             ' close the database connection
             CloseDatabaseConnection()
@@ -351,6 +338,61 @@ Public Class PokeApp
         End Try
 
     End Sub
+    Private Sub cboCards_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCards.SelectedIndexChanged
 
+        Try
+
+            Dim strSelect As String = ""
+            Dim cmdSelect As OleDb.OleDbCommand ' this will be used for our Select statement
+            Dim drSourceTable As OleDb.OleDbDataReader ' this will be where our data is retrieved to
+            Dim dt As DataTable = New DataTable ' this is the table we will load from our reader
+
+            ' loop through the textboxes and clear them in case they have data in them after a delete
+            For Each cntrl As Control In Controls
+                If TypeOf cntrl Is TextBox Then
+                    cntrl.Text = String.Empty
+                End If
+            Next
+
+            ' open the DB
+            If OpenDatabaseConnectionSQLServer() = False Then
+
+                ' No, warn the user ...
+                MessageBox.Show(Me, "Database connection error." & vbNewLine &
+                                        "The application will now close.",
+                                        Me.Text + " Error",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+                ' and close the form/application
+                Me.Close()
+
+            End If
+
+            ' Build the select statement
+            strSelect = "SELECT image FROM cards WHERE id = " & cboCards.SelectedValue.ToString
+
+            ' Retrieve all the records 
+            cmdSelect = New OleDb.OleDbCommand(strSelect, m_conAdministrator)
+            drSourceTable = cmdSelect.ExecuteReader
+
+            ' load table from data reader
+            dt.Load(drSourceTable)
+
+            'MessageBox.Show(dt.Rows(0).Item(0).ToString)
+            webImage.Navigate(dt.Rows(0).Item(0).ToString)
+
+            drSourceTable.Close()
+
+            ' close the database connection
+            CloseDatabaseConnection()
+
+        Catch ex As Exception
+
+            ' Log and display error message
+            MessageBox.Show(ex.Message)
+
+        End Try
+
+    End Sub
 
 End Class
